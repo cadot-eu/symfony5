@@ -18,6 +18,7 @@ Docker for symfony 5/php 8.3.1 with:
 - environnement PANTHER
 - php.iuni
 - apache.conf
+- eml2svg
 
 ## execution in your symfony directory
 `
