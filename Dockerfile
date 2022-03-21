@@ -22,11 +22,8 @@ RUN apt-get update -q -y \
   imagemagick \
   libonig5 \
   libpq5 \ 
-  # git & unzip needed for composer, unless we document to use dev image for composer install
-  # unzip needed due to https://github.com/composer/composer/issues/4471
   unzip \
   git \
-  # packages useful for dev
   less \
   mariadb-client \
   vim \
