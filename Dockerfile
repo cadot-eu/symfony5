@@ -92,7 +92,7 @@ COPY apache.conf /etc/apache2/sites-enabled/000-default.conf
 COPY . /app
 
 
-RUN apt install memcached libmemcached-tools libnss3 chromium-driver -y
+RUN apt install memcached libmemcached-tools libnss3 -y # chromium-driver
 RUN set -ex \
     && rm -rf /var/lib/apt/lists/* \
     && MEMCACHED="`mktemp -d`" \
@@ -115,6 +115,7 @@ RUN wget https://phar.phpunit.de/phpunit.phar
 RUN chmod +x phpunit.phar
 RUN mv phpunit.phar /usr/local/bin/phpunit
 RUN command -v phpunit
+RUN wget https://github.com/dantleech/fink/releases/download/0.10.3/fink.phar
 
 WORKDIR /app
 RUN echo 'alias sc="php /app/bin/console"' >> ~/.bashrc
